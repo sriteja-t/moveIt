@@ -18,6 +18,11 @@ print('''
  
 source_path = input(str("Enter the path of the directory to scan : "))
 destination_path = input(str("Enter the path of the directory to move the files : "))
+if os.path.isdir(destination_path):
+     print('Directory exists.')
+else:
+    os.mkdir(destination_path)
+    print('Directory created.')
 file_type = input("Enter the file extension you want to scan in the directory or 0 to scan all files : ")
 limit = float(input("Enter the minimum file size in MB : "))
 f_size = limit * 1000000
